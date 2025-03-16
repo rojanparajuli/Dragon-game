@@ -18,6 +18,7 @@ function startGame() {
     document.querySelector(".gameover").innerHTML = "Game Over";
     document.querySelector(".gameover").style.color = "red";
     document.querySelector(".start-button").style.display = "none";
+    document.querySelector(".level2-button").style.display = "none";
 
     document.querySelector(".gameover-gif").style.display = "none";
 
@@ -96,8 +97,7 @@ function checkCollision() {
 
         gameTheme.pause();
         gameOverSound.play();
-    }
-    else if (offsetx < 125 && cross) {
+    } else if (offsetx < 125 && cross) {
         score += 1;
         updateScore(score);
         cross = false;
@@ -115,9 +115,7 @@ function checkCollision() {
         gameover.innerHTML = "You Won!";
         gameover.style.color = "green";
         gameover.style.visibility = "visible";
-        document.querySelector(".start-button").style.display = "block";
-
-        gameoverGif.style.display = "block";
+        document.querySelector(".level2-button").style.display = "block";
     }
 }
 
@@ -125,4 +123,6 @@ function updateScore(score) {
     document.getElementById("scorecount").innerHTML = "Your Score: " + score;
 }
 
-document.querySelector(".start-button").addEventListener("click", startGame);
+function goToLevel2() {
+    window.location.href = "level2/index.html";
+}

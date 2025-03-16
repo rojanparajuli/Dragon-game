@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #87CEEB;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-container {
+    position: relative;
+    width: 1300px;
+    height: 600px;
+    background: url('assets/background.png') no-repeat center/cover;
+    border: 3px solid black;
+    overflow: hidden;
+}
+
+.gameover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: red;
+    visibility: hidden;
+}
+
+.scoreboard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.start-button, .retry-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    background: #28a745;
+    color: white;
+    display: block;
+}
+
+.retry-button {
+    background: red;
+    display: none;
+}
+
+.dragon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('assets/standing.gif') no-repeat center/contain;
+    bottom: 10px;
+    left: 50px;
+}
+
+.animatedragon {
+    animation: jump 0.7s linear;
+}
+
+@keyframes jump {
+    0% { bottom: 10px; }
+    50% { bottom: 150px; }
+    100% { bottom: 10px; }
+}
+
+.obstacle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('assets/XDZa.gif') no-repeat center/contain;
+    bottom: 10px;
+    right: -100px;
+    display: none;
+    transform: scaleX(-1);
+}
+
+.animateobstacle {
+    animation: moveObstacle 2s infinite linear;
+}
+
+@keyframes moveObstacle {
+    0% { right: -100px; }
+    100% { right: 1300px; }
+}
+
+.finish-line {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('assets/dragon-ball-with-4-stars-logo-F11C43957B-seeklogo.com.png') no-repeat center/contain;
+    bottom: 10px;
+    right: 20px;
+}
+
+.gameover-gif {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
